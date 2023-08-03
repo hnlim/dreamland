@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import "./fonts/EditorialNew-Regular.otf";
+import App from "./App";
+import AddDream from "./components/AddDream";
+import DreamPage from "./components/DreamPage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/add",
+        element: <AddDream />,
+      },
+    ],
+  },
+  {
+    path: "/:id",
+    element: <DreamPage />,
+    loader: async ({ params }) => {
+      return fetch(`http://localhost:3001/dreams/${params.id}`);
+    },
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

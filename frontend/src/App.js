@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import GetAllDreams from "./components/GetAllDreams";
+import addButton from "./images/add-button.png";
+import closeButton from "./images/close-button.png";
 
-function App() {
+export default function App() {
+  const [toggleAdd, setToggleAdd] = useState(false);
+
+  const handleClick = () => {
+    setToggleAdd((current) => !current);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Outlet />
+      </div>
+      {toggleAdd ? (
+        <Header
+          title="ドリームランド"
+          buttonImage={closeButton}
+          buttonLink={`/`}
+          isEditable={false}
+          onClick={handleClick}
+        />
+      ) : (
+        <Header
+          title="ドリームランド"
+          buttonImage={addButton}
+          buttonLink={`/add`}
+          isEditable={false}
+          onClick={handleClick}
+        />
+      )}
+
+      <GetAllDreams />
+    </>
   );
 }
-
-export default App;

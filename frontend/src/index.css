@@ -1,13 +1,75 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Noto+Serif+JP:wght@500&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a,
+p,
+h1,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+button,
+select,
+textarea {
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
+  letter-spacing: 2px;
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+  background-color: transparent;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input[readonly] {
+  display: block;
+  background: none;
+}
+
+input {
+  background-color: transparent;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 1;
 }
