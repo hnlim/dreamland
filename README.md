@@ -1,8 +1,8 @@
 # dreamland
 
-Web application to record dreams using React + Express + SQLite 3.
+CRUD application to record dreams using React + Express + SQLite 3.
 
-#### How to run
+### How to run
 
 1. Clone repository via SSH or HTTP
 2. Install required scripts via `npm install`
