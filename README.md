@@ -1,6 +1,6 @@
 # dreamland
 
-Web application to record dreams using React + Express API + SQLite 3.
+Web application to record dreams using React + Express + SQLite 3.
 
 #### How to run
 
