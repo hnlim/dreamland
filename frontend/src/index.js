@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import "./fonts/EditorialNew-Regular.otf";
 import App from "./App";
 import AddDream from "./components/AddDream";
 import DreamPage from "./components/DreamPage";
