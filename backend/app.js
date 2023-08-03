@@ -1,8 +1,17 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 const db = require("./config/database");
 
 const app = express();
 const port = 3001;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+
+const rootRouter = require("./routes");
+app.use("/", rootRouter);
 
 const initApp = async () => {
   console.log("Testing the database connection...");
